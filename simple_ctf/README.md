@@ -2,7 +2,7 @@
 
 The Simple CTF challenge on the TryHackMe platform is designed for beginners to learn how to scan, enummerate, research, exploit, and utilize privelage escalation. Enjoy!
 
-Target IP: 10.201.96.113
+THM Target IP: 10.201.96.113
 
 ## 1. Recon
 
