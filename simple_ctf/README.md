@@ -319,7 +319,8 @@ Nice! It looks like we were able to successfully log into SSH. Now we will see w
 
 **Q7: What's the user flag?**
 
-- *Answer: contents of user.txt*
+- *Answer: Content inside user.txt*
+- Redacted due to THM policy.
 
 Now lets check if there are any other user home directories while we are in SSH.
 
@@ -329,3 +330,34 @@ Now lets check if there are any other user home directories while we are in SSH.
 
 - *Answer: sunbath*
 
+Next, we need to do some privileged escalation! First I'd like to start out by using "sudo -l" to see what my current user can do.
+
+![sudo](img/sudo.png)
+
+We can see the user “mitch” can run /usr/bin/vim without a password. With that information, let’s check out GTFOBins and see if we can use that for privesc.
+
+![privsec](img/privsec.webp)
+
+I ran this command to escalate my privleges.
+
+```
+sudo vim -c ':!/bin/sh'
+```
+**Q9: What can you leverage to spawn a privileged shell?**
+
+- *Answer: vim*
+
+![root](img/root.png)
+
+It worked! From here all I have to do is grab the root flag and the CTF is complete.
+
+![root flag](img/root_flag.png)
+
+**Q10: What's the root flag?**
+
+- *Answer: Content inside root.txt*
+- Redacted due to THM policy.
+
+## Congratulations! 
+
+Overall, this was a straightforward but valuable room. It guided us through the fundamentals: scanning with RustScan/Nmap, brute-forcing directories with Gobuster, researching and applying a public exploit, consulting GTFOBins for privilege escalation techniques, and ultimately gaining root access to capture the final flag.
