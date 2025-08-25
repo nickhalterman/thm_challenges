@@ -31,3 +31,42 @@ From the results, we can see that the following ports are open...
 
 Knowing that this is a website being hosted, lets visit it to see if it gives us anything.
 
+![Apache Default Page](img/apache.png)
+
+Looks like the defauly Apache2 page, nothing to go off here.
+
+The next thing we will try is using gobuster to see if there are any additional pages on the website.
+
+```
+gobuster dir -u http://10.201.96.113:80 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 100
+```
+![Gobuster scan](img/gobuster.png)
+
+It appears we hit two pages on the website using the medium wordlist.
+
+- /simple
+- /server-status
+
+Lets see what http:10.201.96.113/simple has.
+
+![Simple page](img/simple.png)
+
+Scrolling to the bottom of the page, we can see that the version is 2.2.8. 
+
+![Simple version](img/simple_version.png)
+
+Let’s see if there is anything online about this particular version by simply going to Google and searching “CMS Made Simple 2.2.8 exploit”.
+
+In our results, we see a page on Exploit-DB that matches our search and refers to a SQL injection attack utilizing CVE-2019–9053.
+
+![Exploit databse](img/exploit_database.webp)
+
+**Q3: What's the CVE you're using against the application?**
+
+- *Answer: CVE-2019–9053*
+
+**Q4: To what kind of vulnerability is the application vulnerable?**
+
+- *Answer: SQLi*
+
+
