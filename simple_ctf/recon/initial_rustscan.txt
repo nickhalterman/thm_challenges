@@ -1,0 +1,34 @@
+# Nmap 7.95 scan initiated Sun Aug 24 17:27:47 2025 as: /usr/lib/nmap/nmap --privileged -vvv -p 21,80,2222 -4 -sC -sV -Pn -oN initial_rustscan.txt 10.201.96.113
+Nmap scan report for 10.201.96.113
+Host is up, received user-set (0.036s latency).
+Scanned at 2025-08-24 17:27:47 CDT for 37s
+
+PORT     STATE SERVICE REASON         VERSION
+21/tcp   open  ftp     syn-ack ttl 62 vsftpd 3.0.3
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+|_Can't get directory listing: TIMEOUT
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to ::ffff:REDACTED
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      At session startup, client count was 2
+|      vsFTPd 3.0.3 - secure, fast, stable
+|_End of status
+80/tcp   open  http    syn-ack ttl 62 Apache httpd 2.4.18 ((Ubuntu))
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+| http-methods: 
+|_  Supported Methods: POST OPTIONS GET HEAD
+| http-robots.txt: 2 disallowed entries 
+|_/ /openemr-5_0_1_3 
+|_http-title: Apache2 Ubuntu Default Page: It works
+2222/tcp open  ssh     syn-ack ttl 62 OpenSSH 7.2p2 Ubuntu 4ubuntu2.8 (Ubuntu Linux; protocol 2.0)
+
+Read data files from: /usr/share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Aug 24 17:28:24 2025 -- 1 IP address (1 host up) scanned in 37.00 seconds
