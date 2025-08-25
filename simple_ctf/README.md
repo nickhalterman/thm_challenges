@@ -1,4 +1,4 @@
-# TryHackMe Simple CTF write-up
+# TryHackMe Simple CTF Write-up
 
 The Simple CTF challenge on the TryHackMe platform is designed for beginners to learn how to scan, enummerate, research, exploit, and utilize privelage escalation. Enjoy!
 
